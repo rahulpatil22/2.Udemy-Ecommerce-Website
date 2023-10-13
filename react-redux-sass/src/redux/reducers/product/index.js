@@ -18,11 +18,11 @@ export const product = (state = initialState, action) => {
                 ...state,
                 products: action.data
             }
-            case actionTypes.FILTERED_PRODUCT:
-                return{
-                    ...state,
-                    filteredProduct:action.data
-                }
+          case actionTypes.FILTER_PRODUCT:
+              return{
+                  ...state,
+                  filteredProduct: action.data
+              }  
         default:
             return state;
     }

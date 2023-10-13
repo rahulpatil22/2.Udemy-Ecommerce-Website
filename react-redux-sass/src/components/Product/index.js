@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
+import {Link} from "react-router-dom";
 import * as actions from "../../redux/actions";
 
 import "./_product.scss";
@@ -54,7 +55,8 @@ const Product = () => {
                         </div>
                         <div className="product__item__text">
                             <h6>
-                                <a href="#">{item.name}</a>
+                                
+                                <Link to="/productdetails">{item.name}</Link>
                             </h6>
                             <div className="rating">
                                 <i className="fa fa-star" />

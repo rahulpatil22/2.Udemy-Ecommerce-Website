@@ -1,18 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Route } from 'react-router-dom';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import MainContainer from "./components/MainContainer";
-import './App.css';
+import LandingPage from "./components/index"; // Correct import path
+import ProductDetails from "./components/Product/productDetails";
 
 function App() {
   return (
     <>
       <Header />
-      <MainContainer />
+      <section>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/productdetails" element={<ProductDetails />} />
+        </Routes>
+      </section>
     </>
   );
 }
 
 export default App;
-
