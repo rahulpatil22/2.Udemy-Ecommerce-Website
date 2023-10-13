@@ -21,7 +21,7 @@ app.use("/product/api/",product);
 app.use("/",express.static("Uploads"));
 
 
-const PORT=5000;
+const PORT=5001;
 const server = app.listen(PORT,()=>{
     console.log("App is running on port - " + PORT);
 })
