@@ -58,7 +58,7 @@ product.get("/getProducts",(req,res)=>{
             appData.data = err;
             res.status(500).json(appData);
         }else{
-            connection.query("Select * from products",(error,rows)=>{
+            connection.query("Select * from product",(error,rows)=>{
                 if(error){
                     appData.isError = true;
                     appData.data = err;

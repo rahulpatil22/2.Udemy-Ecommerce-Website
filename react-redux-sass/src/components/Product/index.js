@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import * as actions from "../../redux/actions";
 
 import "./_product.scss";
@@ -15,24 +15,24 @@ import "./_product.scss";
 
 const Product = () => {
     const dispatch = useDispatch();
-    const { product: { products,filteredProduct },cart } = useSelector((obj) => obj);
+    const { product: { products, filteredProduct }, cart } = useSelector((obj) => obj);
 
     useEffect(() => {
         dispatch(actions.getProducts());
     }, [])
 
-    useEffect(()=>{
-        console.log("FROM REDUCER",cart);
-    },[cart])
+    useEffect(() => {
+        console.log("FROM REDUCER", cart);
+    }, [cart])
 
 
-   const addCartItem = (item) => {
+    const addCartItem = (item) => {
 
         console.log(item);
         dispatch(actions.addCartItem(item));
     }
 
-    
+
     return (
         <div className="row">
             {filteredProduct.map((item, index) => (
@@ -47,7 +47,7 @@ const Product = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href={null} onClick={()=>addCartItem(item)}>
+                                    <a href={null} onClick={() => addCartItem(item)}>
                                         <span className="fa fa-shopping-cart" />
                                     </a>
                                 </li>
@@ -55,8 +55,9 @@ const Product = () => {
                         </div>
                         <div className="product__item__text">
                             <h6>
+                            <Link to="/productdetails" state={{item:item}}>{item.name}</Link>
+
                                 
-                                <Link to="/productdetails">{item.name}</Link>
                             </h6>
                             <div className="rating">
                                 <i className="fa fa-star" />
