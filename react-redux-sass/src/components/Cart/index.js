@@ -83,7 +83,7 @@ const Cart = (props) => {
                             Total : <span>{`$ ${parseFloat(cart.itemPriceTotal).toFixed(2)}`}</span>
                         </li>
                         </ul>
-                        <btn className="btn btn-warning">{`Proceed To Checkout`}</btn>
+                        { /*<btn className="btn btn-warning">{`Proceed To Checkout`}</btn> */ }
                     </div>
                 </div>
             </div>
